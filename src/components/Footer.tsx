@@ -64,7 +64,7 @@ export function Footer() {
 
   useEffect(() => {
     setIsVisible(true)
-    
+
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 500)
     }
@@ -111,7 +111,7 @@ export function Footer() {
             d="M0,400 C150,370 350,350 550,360 C750,370 950,340 1200,350 L1200,400 Z"
             fill="rgba(0,0,0,0.02)"
           />
-          
+
           {/* Decorative dots */}
           <circle cx="100" cy="100" r="2" fill="rgba(0,0,0,0.1)" />
           <circle cx="300" cy="150" r="1.5" fill="rgba(0,0,0,0.08)" />
@@ -124,7 +124,7 @@ export function Footer() {
 
       {/* Main Footer Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-8 py-16">
-        
+
         {/* Header Section */}
         <div className="text-center mb-16">
           <div className="inline-block relative">
@@ -137,10 +137,9 @@ export function Footer() {
               <span className="text-sm sm:text-base font-medium text-black">Forward</span>
             </div>
             {/* Animated underline */}
-            <div 
-              className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-0.5 bg-black transition-all duration-1000 ${
-                isVisible ? 'w-full' : 'w-0'
-              }`}
+            <div
+              className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-0.5 bg-black transition-all duration-1000 ${isVisible ? 'w-full' : 'w-0'
+                }`}
             ></div>
             {/* Visual flair dots */}
             <div className="absolute -top-3 -right-4 w-2 h-2 bg-black rounded-full"></div>
@@ -150,17 +149,17 @@ export function Footer() {
 
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          
+
           {/* About Section */}
           <div className="lg:col-span-2 space-y-6">
             <div className="relative">
               <h3 className="text-2xl font-bold text-black mb-4">Gian Raphael Delos Reyes</h3>
               <div className="absolute -top-2 -left-2 w-1.5 h-1.5 bg-black rounded-full"></div>
             </div>
-            
+
             <p className="text-black leading-relaxed">
-              Passionate developer and designer focused on creating elegant solutions through code. 
-              I specialize in building user-friendly experiences that solve real-world problems using 
+              Passionate developer and designer focused on creating elegant solutions through code.
+              I specialize in building user-friendly experiences that solve real-world problems using
               modern technologies and best practices.
             </p>
 
@@ -205,7 +204,7 @@ export function Footer() {
               <h3 className="text-xl font-bold text-black mb-4">Quick Links</h3>
               <div className="absolute -top-1 -left-1 w-1 h-1 bg-black rounded-full"></div>
             </div>
-            
+
             <nav className="space-y-2">
               {quickLinks.map((link, index) => (
                 <button
@@ -230,12 +229,12 @@ export function Footer() {
               <h3 className="text-xl font-bold text-black mb-4">Get In Touch</h3>
               <div className="absolute -top-1 -left-1 w-1 h-1 bg-black rounded-full"></div>
             </div>
-            
+
             <div className="space-y-4">
               {contactInfo.map((contact, index) => (
                 <div key={index} className="group">
                   {contact.link !== "#" ? (
-                    <a 
+                    <a
                       href={contact.link}
                       className="flex items-center gap-3 text-black hover:text-black transition-all duration-200"
                     >
@@ -277,7 +276,7 @@ export function Footer() {
                     className="group relative w-10 h-10 border-2 border-black bg-white shadow-[2px_2px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] transition-all duration-300 hover:scale-110 flex items-center justify-center"
                   >
                     <social.icon className={`w-5 h-5 ${social.color} group-hover:scale-110 transition-transform duration-300`} />
-                    
+
                     {/* Corner accents */}
                     <div className="absolute -top-0.5 -left-0.5 w-1 h-1 bg-black rounded-full"></div>
                     <div className="absolute -bottom-0.5 -right-0.5 w-1 h-1 bg-black rounded-full"></div>
@@ -291,10 +290,10 @@ export function Footer() {
         {/* Bottom Section */}
         <div className="border-t-2 border-black pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            
+
             {/* Copyright */}
             <div className="flex items-center gap-2 text-sm text-black">
-              <span>© 2024 Gian Raphael Delos Reyes. Made with</span>
+              <span>© {new Date().getFullYear()} Gian Raphael Delos Reyes. Made with</span>
               <Heart className="w-4 h-4 text-red-500 fill-current animate-pulse" />
               <span>and lots of patience.</span>
             </div>

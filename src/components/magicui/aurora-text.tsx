@@ -1,6 +1,7 @@
 "use client";
 
 import React, { memo } from "react";
+import { cn } from "@/lib/utils";
 
 interface AuroraTextProps {
   children: React.ReactNode;
@@ -22,11 +23,12 @@ export const AuroraText = memo(
       })`,
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
+      backgroundClip: "text",
       animationDuration: `${10 / speed}s`,
     };
 
     return (
-      <span className={`relative inline-block ${className}`}>
+      <span className={cn("relative inline-block", className)}>
         <span className="sr-only">{children}</span>
         <span
           className="relative animate-aurora bg-[length:200%_auto] bg-clip-text text-transparent"

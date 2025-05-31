@@ -122,8 +122,8 @@ export function AppLayout({ children }: AppLayoutProps) {
                         <SidebarMenuButton
                           onClick={() => handleNavigation(item.url, item.name)}
                           className={`group relative w-full justify-start px-3 py-3 text-black transition-all duration-300 rounded-none border-2 transform hover:scale-105 ${isActive
-                              ? 'bg-black text-white border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] -rotate-1'
-                              : 'border-transparent hover:bg-black hover:text-white hover:border-black hover:shadow-[3px_3px_0px_0px_#000] hover:-rotate-0.5'
+                            ? 'bg-black text-white border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] -rotate-1'
+                            : 'border-transparent hover:bg-black hover:text-white hover:border-black hover:shadow-[3px_3px_0px_0px_#000] hover:-rotate-0.5'
                             }`}
                         >
                           <item.icon className={`mr-3 h-4 w-4 transition-all duration-300 ${isActive ? 'rotate-12' : 'group-hover:rotate-6'
@@ -180,15 +180,16 @@ export function AppLayout({ children }: AppLayoutProps) {
         </Sidebar>
 
         <SidebarInset className="flex-1 bg-white relative">
-          {/* Mobile sidebar trigger */}
-          <div className="sticky top-0 z-40 lg:hidden">
+          {/* Mobile sidebar trigger - Fixed Header */}
+          <div className="fixed top-0 left-0 right-0 z-50 lg:hidden">
             <div className="flex items-center gap-2 p-4 bg-white border-b-2 border-black">
               <SidebarTrigger className="p-2 border-2 border-black hover:bg-black hover:text-white transition-colors duration-200" />
               <h2 className="font-bold text-black">Gian Raphael</h2>
             </div>
           </div>
 
-          <main className="flex-1 overflow-auto">
+          {/* Add padding to main content to account for fixed header */}
+          <main className="flex-1 overflow-auto pt-20 lg:pt-0">
             {children}
           </main>
         </SidebarInset>

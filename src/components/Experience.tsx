@@ -25,7 +25,7 @@ export function Experience() {
                 "Hands-on experience in LMS platform technical administration",
                 "Any other tasks related to the business unit"
             ],
-            technologies: ["Laravel", "PHP", "MySQL", "OpenAI API"]
+            technologies: ["Laravel", "PHP", "MySQL", "OpenAI API", "Microsoft Power Apps", "Power Automate", "Dataverse", "Postman"]
         }
     ]
 
