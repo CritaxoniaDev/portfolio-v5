@@ -1,6 +1,6 @@
 "use client"
 
-import { Home, User, Briefcase, Heart, GraduationCap, Settings, GitBranch, Mail, ChevronRight } from "lucide-react"
+import { Home, User, Code, Briefcase, Heart, GraduationCap, Settings, GitBranch, Mail, ChevronRight } from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -22,10 +22,24 @@ const navigationItems = [
   { name: "Experience", url: "#experience", icon: Briefcase },
   { name: "Training", url: "#training", icon: GraduationCap },
   { name: "Education", url: "#education", icon: Settings },
-  { name: "Skills", url: "#skills", icon: GitBranch },
+  { name: "Skills", url: "#skills", icon: Code },
   { name: "Projects", url: "#projects", icon: GitBranch },
   { name: "Contact", url: "#contact", icon: Mail },
 ]
+
+const getFileExtension = (name: string): string => {
+  const extensions: { [key: string]: string } = {
+    'Home': 'tsx',
+    'About Me': 'md',
+    'Experience': 'json',
+    'Training': 'yml',
+    'Education': 'txt',
+    'Skills': 'js',
+    'Projects': 'git',
+    'Contact': 'env'
+  }
+  return extensions[name] || 'file'
+}
 
 interface AppLayoutProps {
   children: React.ReactNode
@@ -84,27 +98,62 @@ export function AppLayout({ children }: AppLayoutProps) {
           className="border-r-2 border-black shadow-[4px_0px_0px_0px_#000] z-50"
         >
           <SidebarContent className="bg-white relative overflow-hidden">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-5">
-              <div className="absolute top-10 left-4 w-2 h-2 bg-black rounded-full"></div>
-              <div className="absolute top-32 right-6 w-1.5 h-1.5 bg-black rounded-full"></div>
-              <div className="absolute top-64 left-8 w-1 h-1 bg-black rounded-full"></div>
-              <div className="absolute bottom-32 right-4 w-2 h-2 bg-black rounded-full"></div>
-            </div>
 
-            {/* Professional Header */}
-            <div className={`p-6 border-b-2 border-black transition-all duration-300 ${isScrolled ? 'bg-gray-50' : 'bg-white'}`}>
+            {/* Professional Header - VS Code Style */}
+            <div className={`p-4 border-b-2 border-black transition-all duration-300 font-mono ${isScrolled ? 'bg-gray-50' : 'bg-white'}`}>
               <div className="relative">
-                <h1 className="text-2xl font-bold text-black tracking-tight transform -rotate-1 hover:rotate-0 transition-transform duration-300">
-                  Gian Raphael
-                </h1>
-                <p className="text-xs text-black/70 mt-1 font-medium tracking-wide">
-                  Web Developer
-                </p>
-                <div className="mt-2 w-8 h-0.5 bg-black transform rotate-2 hover:rotate-6 transition-transform duration-300"></div>
+                {/* VS Code window controls */}
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500 border border-black"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500 border border-black"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500 border border-black"></div>
+                  </div>
 
-                {/* Floating accent */}
-                <div className="absolute -top-2 -right-2 w-3 h-3 border-2 border-black bg-white transform rotate-45"></div>
+                  {/* File tab indicator */}
+                  <div className="bg-black text-white px-2 py-1 text-[10px] font-bold tracking-wider transform skew-x-[-2deg]">
+                    ACTIVE
+                  </div>
+                </div>
+
+                {/* File path breadcrumb */}
+                <div className="text-[10px] text-gray-500 mb-2 font-mono tracking-wide">
+                  ~/portfolio/src/developer/
+                </div>
+
+                {/* Main name with syntax highlighting style */}
+                <div className="relative">
+                  <span className="text-xs text-gray-500 font-mono">const </span>
+                  <h1 className="inline text-xl font-bold text-black tracking-tight transform hover:skew-x-[-1deg] transition-transform duration-200 font-mono">
+                    GianRaphael
+                  </h1>
+                  <span className="text-xs text-gray-500 font-mono"> = {`{`}</span>
+                </div>
+
+                {/* Neobrutalist accents */}
+                <div className="absolute -top-1 -right-1 w-2 h-2 bg-black transform rotate-45"></div>
+                <div className="absolute -bottom-1 -left-1 w-1 h-1 bg-black"></div>
+
+                {/* Syntax error indicator (decorative) */}
+                <div className="absolute top-12 right-2 w-1 h-1 bg-red-500 rounded-full animate-pulse"></div>
+
+                {/* Git branch indicator */}
+                <div className="absolute bottom-0 right-0 flex items-center gap-1 text-[10px] text-gray-500 font-mono">
+                  <div className="w-2 h-2 border border-gray-400 rounded-full"></div>
+                  <span>main</span>
+                </div>
+
+                {/* Code folding indicators */}
+                <div className="absolute left-0 top-10 space-y-2">
+                  <div className="w-2 h-px bg-gray-300"></div>
+                  <div className="w-2 h-px bg-gray-300"></div>
+                  <div className="w-2 h-px bg-gray-300"></div>
+                </div>
+
+                {/* Hover tooltip */}
+                <div className="absolute -bottom-8 left-0 bg-black text-white px-2 py-1 text-[10px] font-mono rounded-sm opacity-0 hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
+                  Developer.tsx - Active since {new Date().getFullYear()}
+                </div>
               </div>
             </div>
 
@@ -115,39 +164,84 @@ export function AppLayout({ children }: AppLayoutProps) {
               </SidebarGroupLabel>
               <SidebarGroupContent>
                 <SidebarMenu className="space-y-1">
-                  {navigationItems.map((item) => {
+                  {navigationItems.map((item, index) => {
                     const isActive = activeSection === item.name
                     return (
                       <SidebarMenuItem key={item.name}>
                         <SidebarMenuButton
                           onClick={() => handleNavigation(item.url, item.name)}
-                          className={`group relative w-full justify-start px-3 py-3 text-black transition-all duration-300 rounded-none border-2 transform hover:scale-105 ${isActive
-                            ? 'bg-black text-white border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] -rotate-1'
-                            : 'border-transparent hover:bg-black hover:text-white hover:border-black hover:shadow-[3px_3px_0px_0px_#000] hover:-rotate-0.5'
+                          className={`group relative w-full justify-start px-2 py-2.5 text-black transition-all duration-150 rounded-none border-2 transform font-mono text-xs ${isActive
+                            ? 'bg-black text-white border-black shadow-[4px_4px_0px_0px_#000] translate-x-[-2px] translate-y-[-2px]'
+                            : 'border-transparent bg-white hover:bg-gray-100 hover:border-black hover:shadow-[2px_2px_0px_0px_#000] hover:translate-x-[-1px] hover:translate-y-[-1px]'
                             }`}
                         >
-                          <item.icon className={`mr-3 h-4 w-4 transition-all duration-300 ${isActive ? 'rotate-12' : 'group-hover:rotate-6'
-                            }`} />
-                          <span className="text-sm font-medium tracking-wide flex-1">
+                          {/* File tree connector lines */}
+                          <div className="absolute left-0 top-0 bottom-0 w-4 flex flex-col items-center justify-center pointer-events-none">
+                            {/* Vertical line */}
+                            {index !== 0 && (
+                              <div className="absolute top-0 w-px h-3 bg-gray-400 opacity-60"></div>
+                            )}
+
+                            {/* Horizontal connector */}
+                            <div className="w-2 h-px bg-gray-400 opacity-60"></div>
+
+                            {/* Vertical continuation line */}
+                            {index !== navigationItems.length - 1 && (
+                              <div className="absolute bottom-0 w-px h-3 bg-gray-400 opacity-60"></div>
+                            )}
+                          </div>
+
+                          {/* Folder/File icon with VS Code styling */}
+                          <div className="relative ml-4 mr-2 flex items-center">
+                            {/* Folder expand/collapse indicator */}
+                            <div className={`mr-1 transition-transform duration-150 ${isActive ? 'rotate-90' : 'rotate-0'
+                              }`}>
+                              <div className="w-0 h-0 border-l-[4px] border-l-black border-t-[3px] border-t-transparent border-b-[3px] border-b-transparent"></div>
+                            </div>
+
+                            <item.icon className={`h-4 w-4 transition-all duration-200 ${isActive ? 'text-white scale-110' : 'text-gray-700 group-hover:text-black group-hover:scale-105'
+                              }`} />
+                          </div>
+
+                          {/* File/Folder name with VS Code typography */}
+                          <span className={`text-sm font-medium tracking-normal flex-1 relative z-10 ${isActive ? 'text-white font-semibold' : 'text-gray-800 group-hover:text-black'
+                            }`}>
                             {item.name}
                           </span>
 
-                          {/* Active indicator */}
+                          {/* File extension badge (VS Code style) */}
+                          <div className={`text-[10px] px-1.5 py-0.5 rounded-sm font-mono transition-all duration-150 ${isActive
+                            ? 'bg-white text-black'
+                            : 'bg-gray-200 text-gray-600 group-hover:bg-gray-300'
+                            }`}>
+                            {getFileExtension(item.name)}
+                          </div>
+
+                          {/* Active file indicator (VS Code tab style) */}
                           {isActive && (
-                            <ChevronRight className="w-3 h-3 animate-pulse" />
+                            <div className="absolute left-0 top-0 bottom-0 w-1 bg-white"></div>
                           )}
 
-                          {/* Hover accent */}
-                          <div className={`absolute -right-1 top-1/2 w-1 h-1 bg-current rounded-full transition-all duration-200 transform -translate-y-1/2 ${isActive ? 'opacity-100 scale-150' : 'opacity-0 group-hover:opacity-100'
+                          {/* Hover state border accent */}
+                          <div className={`absolute inset-0 border-l-2 pointer-events-none transition-all duration-150 ${isActive ? 'border-l-white' : 'border-l-transparent group-hover:border-l-gray-400'
                             }`}></div>
 
-                          {/* Active corner decoration */}
+                          {/* Neobrutalist corner cuts */}
+                          <div className={`absolute top-0 right-0 w-0 h-0 transition-all duration-150 ${isActive
+                            ? 'border-r-[4px] border-r-transparent border-t-[4px] border-t-white'
+                            : 'border-r-[3px] border-r-transparent border-t-[3px] border-t-black opacity-0 group-hover:opacity-100'
+                            }`}></div>
+
+                          {/* Modified indicator (VS Code unsaved file dot) */}
                           {isActive && (
-                            <>
-                              <div className="absolute -top-1 -left-1 w-1.5 h-1.5 bg-white rounded-full"></div>
-                              <div className="absolute -bottom-1 -right-1 w-1.5 h-1.5 bg-white rounded-full"></div>
-                            </>
+                            <div className="absolute -top-1 -right-1 w-2 h-2 bg-white rounded-full border border-black"></div>
                           )}
+
+                          {/* Breadcrumb path on hover */}
+                          <div className={`absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white px-2 py-1 text-xs font-mono rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50 ${isActive ? 'hidden' : ''
+                            }`}>
+                            ~/portfolio/{item.name.toLowerCase().replace(' ', '-')}
+                          </div>
                         </SidebarMenuButton>
                       </SidebarMenuItem>
                     )
