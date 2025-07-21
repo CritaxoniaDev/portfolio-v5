@@ -100,7 +100,7 @@ export function Home() {
                                     </Badge>
 
                                     {/* Name - Responsive typography */}
-                                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[5.3rem] font-bold text-black leading-tight sm:leading-tight lg:leading-[5.3rem]">
+                                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[5.3rem] font-bold text-black tracking-tight sm:leading-tight lg:leading-[5.3rem]">
                                         <AuroraText className="inline-block">
                                             Gian Raphael
                                         </AuroraText>
@@ -136,7 +136,7 @@ export function Home() {
                                     onClick={() => handleNavigation("#projects")}
                                     variant="noShadow"
                                     size="default"
-                                    className="group relative font-bold text-xs sm:text-sm w-full sm:w-auto bg-black text-white border-3 border-black rounded-none transform transition-all duration-100 hover:translate-x-[-6px] hover:translate-y-[-6px] hover:shadow-[6px_6px_0px_0px_#000] active:translate-x-[-1px] active:translate-y-[-1px] active:shadow-[1px_1px_0px_0px_#000] uppercase tracking-wide py-3 px-5 skew-x-[-1deg] hover:skew-x-0"
+                                    className="group relative relative inline-flex items-center justify-center gap-2 h-10 px-5 text-sm font-medium rounded-md transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none disabled:hover:transform-none bg-[#FFE4C8] dark:bg-[#2A1810] text-[#2A1810] dark:text-[#FFE4C8] border-4 border-double border-[#2A1810] dark:border-[#FFE4C8] shadow-[4px_4px_0_0_#2A1810] dark:shadow-[4px_4px_0_0_#FFE4C8] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#2A1810] dark:hover:shadow-[6px_6px_0_0_#FFE4C8] active:translate-x-0 active:translate-y-0 active:shadow-[2px_2px_0_0_#2A1810] dark:active:shadow-[2px_2px_0_0_#FFE4C8]"
                                 >
                                     <span className="relative z-10 flex items-center gap-2">
                                         <span className="w-1.5 h-1.5 bg-white"></span>
@@ -154,7 +154,7 @@ export function Home() {
                                     onClick={() => handleNavigation("#contact")}
                                     variant="noShadow"
                                     size="default"
-                                    className="group relative font-bold text-xs sm:text-sm w-full sm:w-auto bg-white text-black border-black rounded-none transform transition-all duration-100 hover:translate-x-[6px] hover:translate-y-[-6px] hover:shadow-[-6px_6px_0px_0px_#000] active:translate-x-[1px] active:translate-y-[-1px] active:shadow-[-1px_1px_0px_0px_#000] uppercase tracking-wide py-3 px-5 skew-x-[1deg] hover:skew-x-0 overflow-visible"
+                                    className="group relative relative inline-flex items-center justify-center gap-2 h-10 px-5 text-sm font-medium rounded-md transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none disabled:hover:transform-none bg-[#FFE4C8] dark:bg-[#2A1810] text-[#2A1810] dark:text-[#FFE4C8] border-4 border-double border-[#2A1810] dark:border-[#FFE4C8] shadow-[4px_4px_0_0_#2A1810] dark:shadow-[4px_4px_0_0_#FFE4C8] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#2A1810] dark:hover:shadow-[6px_6px_0_0_#FFE4C8] active:translate-x-0 active:translate-y-0 active:shadow-[2px_2px_0_0_#2A1810] dark:active:shadow-[2px_2px_0_0_#FFE4C8]"
                                 >
                                     <span className="relative z-10 flex items-center gap-2">
                                         <span className="w-1.5 h-1.5 bg-black"></span>
@@ -162,21 +162,6 @@ export function Home() {
                                         <span className="w-1 h-1 bg-black"></span>
                                     </span>
                                     <ArrowRight className="h-3 w-3 group-hover:translate-x-2 group-hover:-rotate-12 transition-all duration-200 relative z-10" />
-
-                                    {/* Outer outline frame */}
-                                    <div className="absolute -inset-2 border-2 border-black opacity-60 group-hover:opacity-100 group-hover:-inset-3 transition-all duration-100 pointer-events-none"></div>
-
-                                    {/* Corner cuts */}
-                                    <div className="absolute top-0 right-0 w-0 h-0 border-r-[4px] border-r-transparent border-t-[4px] border-t-black"></div>
-                                    <div className="absolute bottom-0 left-0 w-0 h-0 border-l-[3px] border-l-transparent border-b-[3px] border-b-black"></div>
-
-                                    {/* Inner outline for extra depth */}
-                                    <div className="absolute inset-1 border border-black opacity-20 pointer-events-none group-hover:opacity-40 transition-opacity duration-100"></div>
-
-                                    {/* Noise texture effect */}
-                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-8 transition-opacity duration-200" style={{
-                                        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
-                                    }}></div>
                                 </Button>
                             </div>
                         </div>

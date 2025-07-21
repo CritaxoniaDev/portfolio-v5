@@ -2,18 +2,13 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const customFont = localFont({
+const spo_ui29h3j3 = localFont({
   src: [
     {
       path: "../fonts/h9k2.woff2",
       weight: "400",
       style: "normal",
-    },
-    {
-      path: "../fonts/n4p6.woff2",
-      weight: "700",
-      style: "normal",
-    },
+    }
   ],
   variable: "--font-custom",
   display: "swap",
@@ -85,11 +80,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code", // Add your Google Search Console verification
-    // yandex: "your-yandex-verification-code",
-    // yahoo: "your-yahoo-verification-code",
-  },
   category: "technology",
 };
 
@@ -155,7 +145,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${customFont.variable} font-custom antialiased`}>
+      <body className={`${spo_ui29h3j3.variable} tracking-tight font-custom antialiased`}>
         {children}
       </body>
     </html>
