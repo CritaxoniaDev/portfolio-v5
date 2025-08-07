@@ -2,6 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Macan';
+  src: url('/src/fonts/macan-light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Macan';
+  src: url('/src/fonts/macan-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Macan';
+  src: url('/src/fonts/macan-semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Macan';
+  src: url('/src/fonts/macan-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 html,
 body {
   max-width: 100vw;
@@ -32,7 +64,8 @@ a {
 
 @layer base {
   :root {
-    --font-custom: '__SpoUiMix_323dsa-csadih8as-8ac7as', system-ui, sans-serif;
+    --font-custom: 'Macan', system-ui, sans-serif;
+    --font-poly-sans: 'Macan', system-ui, sans-serif;
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
@@ -113,6 +146,14 @@ a {
   body {
     @apply bg-background text-foreground;
   }
+  
+  h1, h2, h3, h4, h5, h6, div {
+    font-family: var(--font-h9k2);
+  }
+  
+  p, button {
+    font-family: var(--font-macan-light);
+  }
 }
 
 @keyframes aurora {
@@ -124,38 +165,6 @@ a {
   }
   100% {
     background-position: 0% 50%;
-  }
-}
-
-/* Ensure animations work in production */
-.aurora-animation {
-  background-size: 400% 400% !important;
-  animation: aurora 3s ease infinite !important;
-}
-
-
-@theme inline {
-  @keyframes aurora {
-  0% {
-    background-position: 0% 50%;
-    transform: rotate(-5deg) scale(0.9);
-    }
-  25% {
-    background-position: 50% 100%;
-    transform: rotate(5deg) scale(1.1);
-    }
-  50% {
-    background-position: 100% 50%;
-    transform: rotate(-3deg) scale(0.95);
-    }
-  75% {
-    background-position: 50% 0%;
-    transform: rotate(3deg) scale(1.05);
-    }
-  100% {
-    background-position: 0% 50%;
-    transform: rotate(-5deg) scale(0.9);
-    }
   }
 }
 

@@ -7,6 +7,7 @@ import { AuroraText } from "@/components/magicui/aurora-text"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import { Terminal } from "@/components/magicui/terminal"
+import { PointerHighlight } from "@/components/ui/pointer-highlight"
 import Star5 from "@/components/stars/s5"
 import Star11 from "@/components/stars/s11"
 import Star21 from "@/components/stars/s21"
@@ -101,11 +102,10 @@ export function Home() {
 
                                     {/* Name - Responsive typography */}
                                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[5.3rem] font-bold text-black tracking-tight sm:leading-tight lg:leading-[5.3rem]">
-                                        <AuroraText className="inline-block">
+                                        <AuroraText className="">
                                             Gian Raphael
                                         </AuroraText>
-                                        <br />
-                                        <span className="block mt-1 sm:mt-2">Delos Reyes</span>
+                                        <span className="block mt-1 sm:mt-2"><PointerHighlight>Delos Reyes</PointerHighlight></span>
                                     </h1>
                                 </div>
                             </div>
@@ -166,121 +166,22 @@ export function Home() {
                             </div>
                         </div>
 
-                        {/* Right Content - Profile Image - Responsive */}
+                        {/* Right Content - Profile Image - Minimalist */}
                         <div className="flex justify-center lg:justify-end order-1 lg:order-2">
                             <div className="relative">
-                                {/* Main image container with 3D effect and floating stars - Responsive sizing */}
-                                <div className="relative border-2 sm:border-3 lg:border-4 border-black bg-white p-1 sm:p-1.5 lg:p-2 shadow-[6px_6px_0px_0px_#000] sm:shadow-[8px_8px_0px_0px_#000] lg:shadow-[12px_12px_0px_0px_#000] hover:shadow-[8px_8px_0px_0px_#000] sm:hover:shadow-[12px_12px_0px_0px_#000] lg:hover:shadow-[16px_16px_0px_0px_#000] transition-all duration-300">
-
-                                    {/* Floating Stars - Positioned around the image */}
-                                    {/* Top Left Star */}
-                                    <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 lg:-top-8 lg:-left-8 animate-bounce z-20">
-                                        <Star21
-                                            size={24}
-                                            color="#000000"
-                                            className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 drop-shadow-md hover:scale-110 transition-transform duration-200"
-                                        />
-                                    </div>
-
-                                    {/* Top Right Star */}
-                                    <div className="absolute -top-3 -right-5 sm:-top-4 sm:-right-7 lg:-top-6 lg:-right-9 animate-pulse z-20">
-                                        <Star35
-                                            size={20}
-                                            color="red"
-                                            className="w-5 h-5 sm:w-7 sm:h-7 lg:w-8 lg:h-8 drop-shadow-md hover:scale-110 transition-transform duration-200"
-                                        />
-                                    </div>
-
-                                    {/* Bottom Left Star */}
-                                    <div className="absolute -bottom-5 -left-3 sm:-bottom-7 sm:-left-4 lg:-bottom-8 lg:-left-6 animate-bounce z-20" style={{ animationDelay: '0.5s' }}>
-                                        <Star11
-                                            size={22}
-                                            color="#000000"
-                                            className="w-5.5 h-5.5 sm:w-7 sm:h-7 lg:w-9 lg:h-9 drop-shadow-md hover:scale-110 transition-transform duration-200"
-                                        />
-                                    </div>
-
-                                    {/* Bottom Right Star */}
-                                    <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 lg:-bottom-7 lg:-right-7 animate-pulse z-20" style={{ animationDelay: '1s' }}>
-                                        <Star5
-                                            size={26}
-                                            color="red"
-                                            className="w-6.5 h-6.5 sm:w-8 sm:h-8 lg:w-10 lg:h-10 drop-shadow-md hover:scale-110 transition-transform duration-200"
-                                        />
-                                    </div>
-
-                                    {/* Additional floating stars - Hidden on mobile for cleaner look */}
-                                    <div className="hidden sm:block absolute -top-10 left-1/4 lg:-top-12 lg:left-1/3 animate-bounce z-20" style={{ animationDelay: '1.5s' }}>
-                                        <Star21
-                                            size={16}
-                                            color="red"
-                                            className="w-4 h-4 lg:w-6 lg:h-6 opacity-70 hover:opacity-100 hover:scale-125 transition-all duration-200"
-                                        />
-                                    </div>
-
-                                    <div className="hidden sm:block absolute -right-10 top-1/3 lg:-right-12 lg:top-1/4 animate-pulse z-20" style={{ animationDelay: '2s' }}>
-                                        <Star35
-                                            size={14}
-                                            color="#000000"
-                                            className="w-3.5 h-3.5 lg:w-5 lg:h-5 opacity-60 hover:opacity-100 hover:scale-125 transition-all duration-200"
-                                        />
-                                    </div>
-
-                                    <div className="hidden sm:block absolute -bottom-8 left-1/3 lg:-bottom-10 lg:left-1/4 animate-bounce z-20" style={{ animationDelay: '0.8s' }}>
-                                        <Star11
-                                            size={15}
-                                            color="#000000"
-                                            className="w-4 h-4 lg:w-5 lg:h-5 opacity-50 hover:opacity-100 hover:scale-125 transition-all duration-200"
-                                        />
-                                    </div>
-
-                                    <div className="hidden lg:block absolute -left-14 top-1/2 animate-pulse z-20" style={{ animationDelay: '2.5s' }}>
-                                        <Star5
-                                            size={18}
-                                            color="#000000"
-                                            className="w-4.5 h-4.5 opacity-40 hover:opacity-100 hover:scale-150 transition-all duration-200"
-                                        />
-                                    </div>
-
-                                    {/* Extra large accent stars for desktop */}
-                                    <div className="hidden lg:block absolute -top-16 right-1/4 animate-bounce z-20" style={{ animationDelay: '3s' }}>
-                                        <Star21
-                                            size={28}
-                                            color="#000000"
-                                            className="w-7 h-7 opacity-30 hover:opacity-80 hover:scale-125 transition-all duration-200"
-                                        />
-                                    </div>
-
-                                    <div className="hidden lg:block absolute -bottom-12 -right-10 animate-pulse z-20" style={{ animationDelay: '2.8s' }}>
-                                        <Star35
-                                            size={24}
-                                            color="#000000"
-                                            className="w-6 h-6 opacity-35 hover:opacity-80 hover:scale-125 transition-all duration-200"
-                                        />
-                                    </div>
-
-                                    {/* Inner border glow effect */}
-                                    <div className="border border-black sm:border-2 bg-gradient-to-br from-white to-gray-50 p-0.5 sm:p-1">
-                                        <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 bg-gray-200 border border-black relative overflow-hidden">
-                                            {/* Placeholder for profile image */}
-                                            <div className="w-full h-full flex items-center justify-center text-black font-bold text-sm sm:text-base lg:text-lg">
-                                                Profile Image
-                                            </div>
-                                            {/* You can replace this with your actual image: */}
-                                            <Image
-                                                src="/images/profile.jpg"
-                                                alt="Gian Raphael Delos Reyes"
-                                                fill
-                                                className="object-cover"
-                                                sizes="(max-width: 640px) 192px, (max-width: 768px) 256px, (max-width: 1024px) 288px, 320px"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    {/* Inner glow accent */}
-                                    <div className="absolute inset-1 sm:inset-2 border border-black opacity-20 pointer-events-none"></div>
+                                {/* Border background */}
+                                <div className="absolute inset-0 bg-black transform translate-x-2 translate-y-2"></div>
+                                
+                                {/* Main image container */}
+                                <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 border-2 border-black bg-white overflow-hidden shadow-lg">
+                                    <Image
+                                        src="/images/profile.jpg"
+                                        alt="Gian Raphael Delos Reyes"
+                                        fill
+                                        className="object-cover"
+                                        sizes="(max-width: 640px) 192px, (max-width: 768px) 256px, (max-width: 1024px) 288px, 320px"
+                                    />
                                 </div>
-
                             </div>
                         </div>
                     </div>

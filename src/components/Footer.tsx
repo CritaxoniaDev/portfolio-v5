@@ -182,17 +182,12 @@ export function Footer() {
             <div className="grid grid-cols-3 gap-4 pt-4">
               <div className="text-center border border-black p-3 bg-white shadow-[2px_2px_0px_0px_#000]">
                 <Code className="w-5 h-5 mx-auto mb-1 text-black" />
-                <div className="text-lg font-bold text-black">50+</div>
+                <div className="text-lg font-bold text-black">2</div>
                 <div className="text-xs text-black">Projects</div>
               </div>
               <div className="text-center border border-black p-3 bg-white shadow-[2px_2px_0px_0px_#000]">
-                <Coffee className="w-5 h-5 mx-auto mb-1 text-black" />
-                <div className="text-lg font-bold text-black">∞</div>
-                <div className="text-xs text-black">Coffee Cups</div>
-              </div>
-              <div className="text-center border border-black p-3 bg-white shadow-[2px_2px_0px_0px_#000]">
                 <Zap className="w-5 h-5 mx-auto mb-1 text-black" />
-                <div className="text-lg font-bold text-black">24/7</div>
+                <div className="text-lg font-bold text-black">2 Hours</div>
                 <div className="text-xs text-black">Learning</div>
               </div>
             </div>

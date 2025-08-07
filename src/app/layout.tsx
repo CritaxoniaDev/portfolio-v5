@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const spo_ui29h3j3 = localFont({
-  src: [
-    {
-      path: "../fonts/h9k2.woff2",
-      weight: "400",
-      style: "normal",
-    }
-  ],
-  variable: "--font-custom",
+const h9k2 = localFont({
+  src: "../fonts/h9k2.woff2",
+  variable: "--font-h9k2",
+  display: "swap",
+});
+
+const macanLight = localFont({
+  src: "../fonts/macan-light.woff2",
+  variable: "--font-macan-light",
   display: "swap",
 });
 
@@ -145,7 +145,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${spo_ui29h3j3.variable} tracking-tight font-custom antialiased`}>
+      <body className={`${h9k2.variable} ${macanLight.variable} tracking-tight antialiased`}>
         {children}
       </body>
     </html>
