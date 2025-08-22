@@ -17,7 +17,7 @@ import {
     FaLeaf,
     FaLifeRing
 } from "react-icons/fa"
-import { SiFirebase } from "react-icons/si"
+import { SiFirebase, SiPostman } from "react-icons/si"
 import { Wind } from "lucide-react"
 import Image from "next/image"
 
@@ -229,6 +229,12 @@ const skills = [
         category: "microsoft",
         color: "text-purple-600",
     },
+    {
+        name: "Postman",
+        icon: SiPostman,
+        category: "api",
+        color: "text-orange-600",
+    }
 ]
 
 // Group skills by category
@@ -244,6 +250,10 @@ const categories = {
     uiux: {
         title: "UI/UX Design",
         skills: skills.filter((skill) => skill.category === "uiux"),
+    },
+    api: {
+        title: "API Development",
+        skills: skills.filter((skill) => skill.category === "api"),
     },
     microsoft: {
         title: "Microsoft Power Platform",

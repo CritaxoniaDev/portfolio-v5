@@ -8,56 +8,6 @@ import { cn } from "@/lib/utils"
 
 const projects = [
   {
-    title: "DoBu Martial Arts",
-    description: "An immersive digital platform for a martial arts gym showcasing various disciplines, personalized training programs, and membership management.",
-    technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"],
-    image: "/projects/project-2.png",
-    githubLink: "https://github.com/CritaxoniaDev/Dobu-Martial-Arts",
-    liveLink: "#",
-    objective: "Design and create an engaging website for DoBu Martial Arts, showcasing the gym's offerings and allowing users to manage their membership.",
-    highlight: "Responsive Design"
-  },
-  {
-    title: "Enomy Finances",
-    description: "A sophisticated financial management system with intuitive dashboards, secure transaction processing, and comprehensive reporting tools.",
-    technologies: ["JSP", "CSS", "JavaScript", "Bootstrap", "MySQL", "Java (Spring Framework)"],
-    image: "/projects/project-4.png",
-    githubLink: "https://github.com/CritaxoniaDev/Enomy-Finances",
-    liveLink: "#",
-    objective: "Design and implement a new computer system for Enomy-Finances, including core system processes and software designs for client presentation.",
-    highlight: "Secure Transactions"
-  },
-  {
-    title: "ABC Cars Portal",
-    description: "A feature-rich marketplace connecting buyers and sellers of used vehicles with advanced search, bidding system, and administrative controls.",
-    technologies: ["JSP", "CSS", "Bootstrap", "JavaScript", "MySQL", "Java (Spring Framework)", "Spring Boot"],
-    image: "/projects/project-5.png",
-    githubLink: "https://github.com/CritaxoniaDev/ABCCarsPortal",
-    liveLink: "#",
-    objective: "Create a comprehensive online platform facilitating the buying and selling of used cars, with distinct functionalities for users and administrators.",
-    highlight: "Advanced Search"
-  },
-  {
-    title: "Meals on Wheels",
-    description: "A compassionate solution enabling meal delivery to those in need, featuring volunteer management, meal planning, and real-time delivery tracking.",
-    technologies: ["PHP", "Laravel", "Blade", "MySQL", "CSS", "JavaScript", "Tailwind", "Stripe API"],
-    image: "/projects/project-6.png",
-    githubLink: "https://github.com/CritaxoniaDev/Mealsonwheels",
-    liveLink: "#",
-    objective: "Design and develop a comprehensive software application for MerryMeal to streamline various processes including registration, meal planning, and delivery management.",
-    highlight: "Stripe Integration"
-  },
-  {
-    title: "MinstrelMuse",
-    description: "A sleek music discovery platform with YouTube API integration, personalized playlists, and an immersive listening experience for music enthusiasts.",
-    technologies: ["React", "Youtube API", "Tailwind", "CSS", "JavaScript", "Firebase Authentication", "Firebase Storage", "Firebase Firestore"],
-    image: "/projects/minstrel-muse.png",
-    githubLink: "https://github.com/CritaxoniaDev/MinstrelMuse",
-    liveLink: "https://minstrelmuse.vercel.app/",
-    objective: "Create an engaging music discovery platform with seamless YouTube integration and personalized user experiences.",
-    highlight: "YouTube API"
-  },
-  {
     title: "Conversational Marketing AI App",
     description: "An enterprise-grade AI platform revolutionizing customer engagement through natural language processing, automated responses, and intelligent lead generation.",
     technologies: ["Laravel", "TinyMCE API", "PHP", "Blade", "JavaScript", "MySQL", "OpenAI API", "Microsoft Auth API", "CSS"],
@@ -76,7 +26,57 @@ const projects = [
     liveLink: "https://marshalmuse.netlify.app/",
     objective: "Developed a comprehensive development tool suite that enhances team collaboration and streamlines the software development workflow.",
     highlight: "Firebase Integration"
-  }
+  },
+  {
+    title: "MinstrelMuse",
+    description: "A sleek music discovery platform with YouTube API integration, personalized playlists, and an immersive listening experience for music enthusiasts.",
+    technologies: ["React", "Youtube API", "Tailwind", "CSS", "JavaScript", "Firebase Authentication", "Firebase Storage", "Firebase Firestore"],
+    image: "/projects/minstrel-muse.png",
+    githubLink: "https://github.com/CritaxoniaDev/MinstrelMuse",
+    liveLink: "https://minstrelmuse.vercel.app/",
+    objective: "Create an engaging music discovery platform with seamless YouTube integration and personalized user experiences.",
+    highlight: "YouTube API"
+  },
+  {
+    title: "Meals on Wheels",
+    description: "A compassionate solution enabling meal delivery to those in need, featuring volunteer management, meal planning, and real-time delivery tracking.",
+    technologies: ["PHP", "Laravel", "Blade", "MySQL", "CSS", "JavaScript", "Tailwind", "Stripe API"],
+    image: "/projects/project-6.png",
+    githubLink: "https://github.com/CritaxoniaDev/Mealsonwheels",
+    liveLink: "#",
+    objective: "Design and develop a comprehensive software application for MerryMeal to streamline various processes including registration, meal planning, and delivery management.",
+    highlight: "Stripe Integration"
+  },
+  {
+    title: "ABC Cars Portal",
+    description: "A feature-rich marketplace connecting buyers and sellers of used vehicles with advanced search, bidding system, and administrative controls.",
+    technologies: ["JSP", "CSS", "Bootstrap", "JavaScript", "MySQL", "Java (Spring Framework)", "Spring Boot"],
+    image: "/projects/project-5.png",
+    githubLink: "https://github.com/CritaxoniaDev/ABCCarsPortal",
+    liveLink: "#",
+    objective: "Create a comprehensive online platform facilitating the buying and selling of used cars, with distinct functionalities for users and administrators.",
+    highlight: "Advanced Search"
+  },
+  {
+    title: "Enomy Finances",
+    description: "A sophisticated financial management system with intuitive dashboards, secure transaction processing, and comprehensive reporting tools.",
+    technologies: ["JSP", "CSS", "JavaScript", "Bootstrap", "MySQL", "Java (Spring Framework)"],
+    image: "/projects/project-4.png",
+    githubLink: "https://github.com/CritaxoniaDev/Enomy-Finances",
+    liveLink: "#",
+    objective: "Design and implement a new computer system for Enomy-Finances, including core system processes and software designs for client presentation.",
+    highlight: "Secure Transactions"
+  },
+  {
+    title: "DoBu Martial Arts",
+    description: "An immersive digital platform for a martial arts gym showcasing various disciplines, personalized training programs, and membership management.",
+    technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"],
+    image: "/projects/project-2.png",
+    githubLink: "https://github.com/CritaxoniaDev/Dobu-Martial-Arts",
+    liveLink: "#",
+    objective: "Design and create an engaging website for DoBu Martial Arts, showcasing the gym's offerings and allowing users to manage their membership.",
+    highlight: "Responsive Design"
+  },
 ]
 
 export function Project() {
@@ -94,7 +94,7 @@ export function Project() {
   return (
     <section id="projects" className="min-h-screen py-20 px-8 bg-white flex items-center">
       <div className="max-w-4xl mx-auto w-full">
-        
+
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-block relative">
@@ -107,10 +107,9 @@ export function Project() {
               <span className="text-sm sm:text-base font-medium text-black">Portfolio</span>
             </div>
             {/* Animated underline */}
-            <div 
-              className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-0.5 bg-black transition-all duration-1000 ${
-                isVisible ? 'w-full' : 'w-0'
-              }`}
+            <div
+              className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-0.5 bg-black transition-all duration-1000 ${isVisible ? 'w-full' : 'w-0'
+                }`}
             ></div>
           </div>
         </div>
@@ -120,7 +119,7 @@ export function Project() {
           {projects.map((project, index) => {
             const itemValue = `item-${index}`
             const isOpen = openProject === itemValue
-            
+
             return (
               <div
                 key={project.title}
@@ -137,7 +136,7 @@ export function Project() {
                       {project.highlight}
                     </span>
                   </div>
-                  <ChevronDown 
+                  <ChevronDown
                     className={cn(
                       "h-5 w-5 text-black transition-transform duration-200",
                       isOpen && "rotate-180"
@@ -149,8 +148,8 @@ export function Project() {
                 <div
                   className={cn(
                     "overflow-hidden transition-all duration-500 ease-in-out transform-gpu",
-                    isOpen 
-                      ? "max-h-[1000px] opacity-100 translate-y-0" 
+                    isOpen
+                      ? "max-h-[1000px] opacity-100 translate-y-0"
                       : "max-h-0 opacity-0 -translate-y-2"
                   )}
                 >
@@ -159,7 +158,7 @@ export function Project() {
                     isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   )}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                      
+
                       {/* Project Image */}
                       <div className={cn(
                         "relative aspect-video border-2 border-black bg-gray-100 transition-all duration-400 ease-out",
@@ -178,7 +177,7 @@ export function Project() {
                         "space-y-6 transition-all duration-500 ease-out",
                         isOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"
                       )}>
-                        
+
                         {/* Description */}
                         <div>
                           <h4 className="text-sm font-bold text-black mb-2">DESCRIPTION</h4>
@@ -224,7 +223,7 @@ export function Project() {
                               </a>
                             </Button>
                           )}
-                          
+
                           {project.liveLink && project.liveLink !== "#" && (
                             <Button
                               asChild

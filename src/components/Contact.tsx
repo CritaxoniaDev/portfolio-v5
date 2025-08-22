@@ -118,7 +118,7 @@ export function Contact() {
             <div>
               <h3 className="text-2xl font-bold text-black mb-6">Contact Information</h3>
               <p className="text-lg text-black leading-relaxed mb-8">
-                I'm always open to discussing new opportunities, collaborations, or just having a chat about technology and development.
+                I'm always open to discuss new opportunities, collaborations, or just having a chat about technology and development.
               </p>
             </div>
 

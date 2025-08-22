@@ -20,12 +20,13 @@ export function Experience() {
             logo: "/resources/educlaas-logo.png", // Add your logo to public/images/
             status: "Current Position",
             isCurrent: true,
+            address: "Singapore",
             responsibilities: [
                 "Webhosting and web server management",
                 "Hands-on experience in LMS platform technical administration",
                 "Any other tasks related to the business unit"
             ],
-            technologies: ["Laravel", "PHP", "MySQL", "OpenAI API", "Microsoft Power Apps", "Power Automate", "Dataverse", "Postman"]
+            technologies: ["Laravel", "PHP", "MySQL", "API Integration", "Microsoft Power Apps", "Postman"]
         }
     ]
 
@@ -37,7 +38,7 @@ export function Experience() {
                 <div className="text-center mb-16">
                     <div className="inline-block relative">
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-4">
-                            Experience
+                            Work Experience
                         </h2>
                         <div className="flex items-center justify-center gap-2 mb-3">
                             <span className="text-sm sm:text-base font-medium text-black">Professional</span>
@@ -56,129 +57,108 @@ export function Experience() {
                 </div>
 
                 {/* Timeline */}
-                <div className="relative">
-                    {/* Timeline Line */}
-                    <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-black via-gray-400 to-black"></div>
+                <div className="relative max-w-6xl mx-auto">
+                    {/* Timeline Line - Thicker and more prominent */}
+                    <div className="absolute left-1/2 transform -translate-x-1 top-0 bottom-0 w-0.5 bg-black"></div>
 
                     {/* Experience Entries */}
-                    <div className="space-y-12">
+                    <div className="space-y-16">
                         {experiences.map((exp, index) => (
-                            <div key={exp.id} className="relative flex items-start gap-8">
+                            <div key={exp.id} className="relative">
 
-                                {/* Timeline Dot */}
-                                <div className="relative z-10 flex-shrink-0">
-                                    <div className={`w-6 h-6 rounded-full border-3 border-black bg-white shadow-[4px_4px_0px_0px_#000] ${exp.isCurrent ? 'animate-pulse' : ''
-                                        }`}>
-                                        <div className={`w-full h-full rounded-full ${exp.isCurrent ? 'bg-black' : 'bg-gray-300'
-                                            }`}></div>
+                                {/* Timeline Dot - Redesigned */}
+                                <div className="absolute left-1/2 transform -translate-x-1/2 z-10">
+                                    <div className={`w-4 h-4 rounded-full border-2 border-black bg-white ${exp.isCurrent ? 'animate-pulse' : ''}`}>
+                                        <div className={`w-full h-full rounded-full ${exp.isCurrent ? 'bg-black' : 'bg-white'}`}></div>
                                     </div>
-
-                                    {/* Floating decorative elements around dot */}
-                                    <div className="absolute -top-2 -right-2 w-2 h-2 bg-black rounded-full"></div>
-                                    <div className="absolute -bottom-2 -left-2 w-1.5 h-1.5 bg-black rounded-full"></div>
                                 </div>
 
-                                {/* Experience Card */}
-                                <div className="flex-1">
-                                    <div className="relative border-3 border-black bg-white p-6 shadow-[8px_8px_0px_0px_#000] hover:shadow-[12px_12px_0px_0px_#000] transition-all duration-300">
+                                {/* Experience Card - Bigger and Centered */}
+                                <div className="flex justify-center px-12 pt-12">
+                                    <div className="w-full max-w-4xl">
+                                        <div className="relative border border-black bg-white px-6 py-7 rounded-lg hover:border-gray-800 hover:shadow-lg transition-all duration-200">
 
-                                        {/* Corner accents */}
-                                        <div className="absolute -top-1.5 -left-1.5 w-3 h-3 bg-black rounded-full"></div>
-                                        <div className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-black rounded-full"></div>
-                                        <div className="absolute -bottom-1.5 -left-1.5 w-3 h-3 bg-black rounded-full"></div>
-                                        <div className="absolute -bottom-1.5 -right-1.5 w-3 h-3 bg-black rounded-full"></div>
-
-                                        {/* Inner glowing border */}
-                                        <div className="border-2 border-black p-4 bg-gradient-to-br from-white to-gray-50">
-
-                                            {/* Header Section */}
-                                            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
-                                                <div className="flex-1">
-                                                    {/* Period */}
-                                                    <div className="flex items-center gap-2 mb-2">
-                                                        <Calendar className="w-4 h-4 text-black" />
-                                                        <span className="text-sm font-medium text-black">{exp.period}</span>
-                                                    </div>
-
-                                                    {/* Position & Company */}
-                                                    <h3 className="text-xl sm:text-2xl font-bold text-black mb-2">
-                                                        {exp.position}
-                                                    </h3>
-                                                    <div className="flex items-center gap-3">
-                                                        <span className="text-lg font-semibold text-black">@ {exp.company}</span>
-                                                        <div className="w-10 h-10 border-2 border-black bg-white rounded-full p-1 shadow-[2px_2px_0px_0px_#000] overflow-hidden">
-                                                            {exp.logo ? (
-                                                                <Image
-                                                                    src={exp.logo}
-                                                                    alt={`${exp.company} Logo`}
-                                                                    width={32}
-                                                                    height={32}
-                                                                    className="object-contain w-full h-full rounded-full"
-                                                                />
-                                                            ) : (
-                                                                <div className="w-full h-full bg-gray-200 rounded-full flex items-center justify-center text-xs font-bold">
-                                                                    Logo
-                                                                </div>
-                                                            )}
-                                                        </div>
-                                                    </div>
+                                        {/* Header Section */}
+                                        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-5">
+                                            <div className="flex-1">
+                                                {/* Period */}
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <Calendar className="w-3 h-3 text-gray-500" />
+                                                    <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">{exp.period}</span>
                                                 </div>
 
-                                                {/* Status Badge */}
-                                                {exp.isCurrent && (
-                                                    <div className="border-2 border-black bg-black text-white px-3 py-1 shadow-[3px_3px_0px_0px_#666] text-sm font-bold">
-                                                        {exp.status}
+                                                {/* Position & Company */}
+                                                <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                                                    {exp.position}
+                                                </h3>
+                                                <div className="flex items-center gap-2 mb-1">
+                                                    <span className="text-sm text-gray-600">@ {exp.company}</span>
+                                                    <div className="w-6 h-6 border border-gray-200 bg-gray-50 rounded-full p-0.5 overflow-hidden">
+                                                        {exp.logo ? (
+                                                            <Image
+                                                                src={exp.logo}
+                                                                alt={`${exp.company} Logo`}
+                                                                width={20}
+                                                                height={20}
+                                                                className="object-contain w-full h-full rounded-full"
+                                                            />
+                                                        ) : (
+                                                            <div className="w-full h-full bg-gray-100 rounded-full flex items-center justify-center">
+                                                                <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+                                                            </div>
+                                                        )}
                                                     </div>
-                                                )}
+                                                </div>
+                                                <span className="text-sm text-gray-600">{exp.address}</span>
                                             </div>
 
-                                            {/* Responsibilities */}
-                                            <div className="mb-6">
-                                                <h4 className="text-lg font-bold text-black mb-4">Responsibilities</h4>
-                                                <div className="space-y-3">
-                                                    {exp.responsibilities.map((responsibility, idx) => (
-                                                        <div key={idx} className="flex items-start gap-3">
-                                                            {/* Glowing bullet */}
-                                                            <div className="flex-shrink-0 mt-2">
-                                                                <div className="w-2 h-2 bg-black rounded-full shadow-[0_0_8px_rgba(0,0,0,0.5)]"></div>
-                                                            </div>
-                                                            <p className="text-base text-black leading-relaxed">{responsibility}</p>
-                                                        </div>
-                                                    ))}
+                                            {/* Status Badge */}
+                                            {exp.isCurrent && (
+                                                <div className="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium border border-green-200">
+                                                    {exp.status}
                                                 </div>
-                                            </div>
+                                            )}
+                                        </div>
 
-                                            {/* Technologies */}
-                                            <div>
-                                                <h4 className="text-lg font-bold text-black mb-4">Technologies Used</h4>
-                                                <div className="flex flex-wrap gap-3">
-                                                    {exp.technologies.map((tech, idx) => (
-                                                        <div key={idx} className="relative">
-                                                            {/* 3D Tag */}
-                                                            <div className="border-2 border-black bg-white px-3 py-1 shadow-[3px_3px_0px_0px_#000] hover:shadow-[4px_4px_0px_0px_#000] transition-all duration-200">
-                                                                <span className="text-sm font-semibold text-black">{tech}</span>
-                                                            </div>
-
-                                                            {/* Floating accent dots */}
-                                                            <div className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-black rounded-full"></div>
+                                        {/* Responsibilities */}
+                                        <div className="mb-5">
+                                            <h4 className="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-3">Responsibilities</h4>
+                                            <div className="space-y-2">
+                                                {exp.responsibilities.map((responsibility, idx) => (
+                                                    <div key={idx} className="flex items-start gap-2 group">
+                                                        <div className="flex-shrink-0 mt-2">
+                                                            <div className="w-1 h-1 bg-gray-400 rounded-full transition-all duration-200 group-hover:bg-gray-600"></div>
                                                         </div>
-                                                    ))}
-                                                </div>
+                                                        <p className="text-sm text-gray-700 leading-relaxed">{responsibility}</p>
+                                                    </div>
+                                                ))}
                                             </div>
                                         </div>
 
-                                        {/* Multiple inner glow layers */}
-                                        <div className="absolute inset-2 border border-black opacity-20 pointer-events-none"></div>
-                                        <div className="absolute inset-3 border border-black opacity-10 pointer-events-none"></div>
+                                        {/* Technologies */}
+                                        <div>
+                                            <h4 className="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-3">Technologies</h4>
+                                            <div className="flex flex-wrap gap-1.5">
+                                                {exp.technologies.map((tech, idx) => (
+                                                    <div 
+                                                        key={idx} 
+                                                        className="px-2 py-0.5 bg-gray-50 border border-gray-200 rounded-md hover:bg-gray-100 transition-colors duration-150"
+                                                    >
+                                                        <span className="text-xs font-medium text-gray-700">{tech}</span>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
                                     </div>
+                                </div>
                                 </div>
                             </div>
                         ))}
                     </div>
 
                     {/* Timeline End Decoration */}
-                    <div className="absolute left-6 bottom-0 w-6 h-6 border-2 border-black bg-white rounded-full shadow-[2px_2px_0px_0px_#000]">
-                        <div className="w-full h-full bg-gradient-to-br from-gray-200 to-white rounded-full"></div>
+                    <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-4 h-4 border-2 border-black bg-white rounded-full">
+                        <div className="w-full h-full bg-white rounded-full"></div>
                     </div>
                 </div>
 
