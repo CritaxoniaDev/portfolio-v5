@@ -56,8 +56,6 @@ const quickLinks = [
   { name: "Contact", url: "#contact" }
 ]
 
-const skills = ["React", "TypeScript", "Node.js", "Power Platform", "UI/UX Design"]
-
 export function Footer() {
   const [isVisible, setIsVisible] = useState(false)
   const [showScrollTop, setShowScrollTop] = useState(false)
@@ -162,21 +160,6 @@ export function Footer() {
               I specialize in building user-friendly experiences that solve real-world problems using
               modern technologies and best practices.
             </p>
-
-            {/* Skills Tags */}
-            <div>
-              <h4 className="text-sm font-bold text-black mb-3">Core Technologies</h4>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill, index) => (
-                  <div key={index} className="relative">
-                    <div className="border border-black bg-white px-3 py-1 shadow-[2px_2px_0px_0px_#000] text-xs font-medium text-black hover:shadow-[3px_3px_0px_0px_#000] transition-all duration-200">
-                      {skill}
-                    </div>
-                    <div className="absolute -top-0.5 -right-0.5 w-1 h-1 bg-black rounded-full"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
 
             {/* Fun Stats */}
             <div className="grid grid-cols-3 gap-4 pt-4">
