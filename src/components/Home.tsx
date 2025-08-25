@@ -134,7 +134,7 @@ export function Home() {
                             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
                                 <Button
                                     onClick={() => handleNavigation("#projects")}
-                                    variant="noShadow"
+
                                     size="default"
                                     className="group relative relative inline-flex items-center justify-center gap-2 h-10 px-5 text-sm font-medium rounded-md transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none disabled:hover:transform-none bg-[#FFE4C8] dark:bg-[#2A1810] text-[#2A1810] dark:text-[#FFE4C8] border-4 border-double border-[#2A1810] dark:border-[#FFE4C8] shadow-[4px_4px_0_0_#2A1810] dark:shadow-[4px_4px_0_0_#FFE4C8] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#2A1810] dark:hover:shadow-[6px_6px_0_0_#FFE4C8] active:translate-x-0 active:translate-y-0 active:shadow-[2px_2px_0_0_#2A1810] dark:active:shadow-[2px_2px_0_0_#FFE4C8]"
                                 >
@@ -152,7 +152,7 @@ export function Home() {
 
                                 <Button
                                     onClick={() => handleNavigation("#contact")}
-                                    variant="noShadow"
+
                                     size="default"
                                     className="group relative relative inline-flex items-center justify-center gap-2 h-10 px-5 text-sm font-medium rounded-md transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none disabled:hover:transform-none bg-[#FFE4C8] dark:bg-[#2A1810] text-[#2A1810] dark:text-[#FFE4C8] border-4 border-double border-[#2A1810] dark:border-[#FFE4C8] shadow-[4px_4px_0_0_#2A1810] dark:shadow-[4px_4px_0_0_#FFE4C8] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#2A1810] dark:hover:shadow-[6px_6px_0_0_#FFE4C8] active:translate-x-0 active:translate-y-0 active:shadow-[2px_2px_0_0_#2A1810] dark:active:shadow-[2px_2px_0_0_#FFE4C8]"
                                 >
@@ -171,7 +171,7 @@ export function Home() {
                             <div className="relative">
                                 {/* Border background */}
                                 <div className="absolute inset-0 bg-black transform translate-x-2 translate-y-2"></div>
-                                
+
                                 {/* Main image container */}
                                 <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 border-2 border-black bg-white overflow-hidden shadow-lg">
                                     <Image

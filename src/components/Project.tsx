@@ -331,7 +331,6 @@ export function Project() {
                             <Button
                               asChild
                               size="sm"
-                              variant="noShadow"
                               className="bg-white text-black hover:bg-black hover:text-white border-2 border-black transition-all duration-200"
                             >
                               <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
