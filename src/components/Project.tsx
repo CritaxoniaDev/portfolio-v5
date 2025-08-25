@@ -119,7 +119,7 @@ export function Project() {
         <div className="text-center mb-16">
           <div className="inline-block relative">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-4">
-              Featured Projects
+              Projects
             </h2>
             <div className="flex items-center justify-center gap-2 mb-3">
               <span className="text-sm sm:text-base font-medium text-black">My</span>
