@@ -20,9 +20,9 @@ const navigationItems = [
   { name: "Home", url: "/", icon: Home },
   { name: "About Me", url: "#about", icon: User },
   { name: "Work Experience", url: "#experience", icon: Briefcase },
-  { name: "Projects", url: "#projects", icon: GitBranch },
+  { name: "Project", url: "#projects", icon: GitBranch },
   { name: "Training", url: "#training", icon: GraduationCap },
-  { name: "Skills", url: "#skills", icon: Code },
+  { name: "Skill", url: "#skills", icon: Code },
   { name: "Education", url: "#education", icon: Settings },
   { name: "Contact", url: "#contact", icon: Mail },
 ]
