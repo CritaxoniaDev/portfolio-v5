@@ -19,14 +19,14 @@ export default function HomePage() {
       <About />
       {/* Experience Section */}
       <Experience />
-      {/* Training Section */}
-      <TrainingAttended />
-      {/* Education Section */}
-      <Education />
-      {/* Skills Section */}
-      <Skills />
       {/* Projects Section */}
       <Project />
+      {/* Training Section */}
+      <TrainingAttended />
+      {/* Skills Section */}
+      <Skills />
+      {/* Education Section */}
+      <Education />
       {/* Contact Section */}
       <Contact />
       {/* Footer Section */}

@@ -18,7 +18,22 @@ import {
     FaLifeRing
 } from "react-icons/fa"
 import { SiFirebase, SiPostman } from "react-icons/si"
-import { Wind } from "lucide-react"
+import {
+    Wind,
+    Users,
+    MessageCircle,
+    Lightbulb,
+    Brain,
+    Clock,
+    Target,
+    ShieldCheck,
+    Eye,
+    Layers,
+    Globe,
+    Scale,
+    Crown,
+    Settings
+} from "lucide-react"
 import Image from "next/image"
 
 // SVG content for Microsoft icons
@@ -237,33 +252,145 @@ const skills = [
     }
 ]
 
-// Group skills by category
-const categories = {
-    frontend: {
-        title: "Frontend Development",
-        skills: skills.filter((skill) => skill.category === "frontend"),
+// Soft Skills
+const softSkills = [
+    {
+        name: "Leadership",
+        icon: Crown,
+        category: "softskills",
+        color: "text-yellow-600",
     },
-    backend: {
-        title: "Backend Development",
-        skills: skills.filter((skill) => skill.category === "backend"),
+    {
+        name: "Teamwork",
+        icon: Users,
+        category: "softskills",
+        color: "text-blue-600",
     },
-    uiux: {
-        title: "UI/UX Design",
-        skills: skills.filter((skill) => skill.category === "uiux"),
+    {
+        name: "Communication Skills",
+        icon: MessageCircle,
+        category: "softskills",
+        color: "text-green-600",
     },
-    api: {
-        title: "API Development",
-        skills: skills.filter((skill) => skill.category === "api"),
+    {
+        name: "Problem-Solving",
+        icon: Settings,
+        category: "softskills",
+        color: "text-red-600",
     },
-    microsoft: {
-        title: "Microsoft Power Platform",
-        skills: skills.filter((skill) => skill.category === "microsoft"),
+    {
+        name: "Critical Thinking",
+        icon: Brain,
+        category: "softskills",
+        color: "text-purple-600",
     },
+    {
+        name: "Creative Thinking",
+        icon: Lightbulb,
+        category: "softskills",
+        color: "text-orange-600",
+    },
+    {
+        name: "Logical Thinking",
+        icon: Target,
+        category: "softskills",
+        color: "text-indigo-600",
+    },
+    {
+        name: "Time Management",
+        icon: Clock,
+        category: "softskills",
+        color: "text-pink-600",
+    },
+    {
+        name: "Adaptability",
+        icon: ShieldCheck,
+        category: "softskills",
+        color: "text-teal-600",
+    },
+    {
+        name: "Stress Management",
+        icon: ShieldCheck,
+        category: "softskills",
+        color: "text-cyan-600",
+    },
+    {
+        name: "Attention to Detail",
+        icon: Eye,
+        category: "softskills",
+        color: "text-emerald-600",
+    },
+    {
+        name: "Multi-tasking",
+        icon: Layers,
+        category: "softskills",
+        color: "text-violet-600",
+    },
+    {
+        name: "Cultural Sensitivity",
+        icon: Globe,
+        category: "softskills",
+        color: "text-rose-600",
+    },
+    {
+        name: "School, Work & Life Balance",
+        icon: Scale,
+        category: "softskills",
+        color: "text-amber-600",
+    }
+]
+
+// Combine technical and soft skills
+const allSkills = [...skills, ...softSkills]
+
+// Main categories (first level tabs)
+const mainCategories = {
+    technical: {
+        title: "Technical Skills",
+        subcategories: {
+            frontend: {
+                title: "Frontend Development",
+                skills: allSkills.filter((skill) => skill.category === "frontend"),
+            },
+            backend: {
+                title: "Backend Development",
+                skills: allSkills.filter((skill) => skill.category === "backend"),
+            },
+            uiux: {
+                title: "UI/UX Design",
+                skills: allSkills.filter((skill) => skill.category === "uiux"),
+            },
+            api: {
+                title: "API Development",
+                skills: allSkills.filter((skill) => skill.category === "api"),
+            },
+            microsoft: {
+                title: "Microsoft Power Platform",
+                skills: allSkills.filter((skill) => skill.category === "microsoft"),
+            },
+        }
+    },
+    softskills: {
+        title: "Soft Skills",
+        skills: allSkills.filter((skill) => skill.category === "softskills"),
+    }
 }
+
+// Light gradient colors for skill cards and tabs
+const gradients = [
+    'bg-gradient-to-br from-blue-50 via-white to-indigo-50',
+    'bg-gradient-to-br from-green-50 via-white to-emerald-50',
+    'bg-gradient-to-br from-purple-50 via-white to-violet-50',
+    'bg-gradient-to-br from-orange-50 via-white to-amber-50',
+    'bg-gradient-to-br from-pink-50 via-white to-rose-50',
+    'bg-gradient-to-br from-teal-50 via-white to-cyan-50',
+    'bg-gradient-to-br from-gray-50 via-white to-slate-50'
+]
 
 export function Skills() {
     const [isVisible, setIsVisible] = useState(false)
-    const [activeCategory, setActiveCategory] = useState("frontend")
+    const [activeMainCategory, setActiveMainCategory] = useState("technical")
+    const [activeSubCategory, setActiveSubCategory] = useState("frontend")
 
     useEffect(() => {
         setIsVisible(true)
@@ -293,12 +420,12 @@ export function Skills() {
                 <div className="text-center mb-20">
                     <div className="inline-block relative">
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-4">
-                            Skills & Technologies
+                            Skills & Competencies
                         </h2>
                         <div className="flex items-center justify-center gap-2 mb-3">
-                            <span className="text-sm sm:text-base font-medium text-black">My</span>
+                            <span className="text-sm sm:text-base font-medium text-black">Technical</span>
                             <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
-                            <span className="text-sm sm:text-base font-medium text-black">Technical Arsenal</span>
+                            <span className="text-sm sm:text-base font-medium text-black">& Soft Skills</span>
                         </div>
                         {/* Animated underline */}
                         <div
@@ -311,13 +438,18 @@ export function Skills() {
                     </div>
                 </div>
 
-                {/* Category Tabs */}
-                <div className="flex flex-wrap justify-center gap-4 mb-16">
-                    {Object.entries(categories).map(([key, category]) => (
+                {/* Main Category Tabs */}
+                <div className="flex flex-wrap justify-center gap-4 mb-8">
+                    {Object.entries(mainCategories).map(([key, category]) => (
                         <button
                             key={key}
-                            onClick={() => setActiveCategory(key)}
-                            className={`relative px-6 py-3 border-2 border-black font-semibold transition-all duration-300 transform hover:scale-105 ${activeCategory === key
+                            onClick={() => {
+                                setActiveMainCategory(key)
+                                if (key === "technical") {
+                                    setActiveSubCategory("frontend")
+                                }
+                            }}
+                            className={`relative px-8 py-4 border-2 border-black font-bold text-lg transition-all duration-300 transform hover:scale-105 ${activeMainCategory === key
                                 ? 'bg-black text-white shadow-[6px_6px_0px_0px_#000]'
                                 : 'bg-white text-black shadow-[4px_4px_0px_0px_#000] hover:shadow-[6px_6px_0px_0px_#000]'
                                 }`}
@@ -330,41 +462,77 @@ export function Skills() {
                     ))}
                 </div>
 
+                {/* Sub Category Tabs (only show for Technical Skills) */}
+                {activeMainCategory === "technical" && (
+                    <div className="flex flex-wrap justify-center gap-3 mb-16">
+                        {Object.entries(mainCategories.technical.subcategories).map(([key, subcategory], idx) => (
+                            <button
+                                key={key}
+                                onClick={() => setActiveSubCategory(key)}
+                                className={`relative px-4 py-2 border-2 border-black font-semibold text-sm transition-all duration-300 transform hover:scale-105 ${gradients[idx % gradients.length]} ${activeSubCategory === key
+                                        ? 'text-black shadow-[4px_4px_0px_0px_#000]'
+                                        : 'text-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[4px_4px_0px_0px_#000]'
+                                    }`}
+                            >
+                                {subcategory.title}
+                            </button>
+                        ))}
+                    </div>
+                )}
+
                 {/* Skills Grid */}
                 <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-4">
-                    {categories[activeCategory as keyof typeof categories].skills.map((skill, index) => (
-                        <div
-                            key={skill.name}
-                            className="group relative border-2 border-black bg-white p-3 shadow-[4px_4px_0px_0px_#000] hover:shadow-[6px_6px_0px_0px_#000] transition-all duration-300 hover:scale-105"
-                        >
-                            {/* Floating corner accents */}
-                            <div className="absolute -top-1 -left-1 w-1.5 h-1.5 bg-black rounded-full"></div>
-                            <div className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-black rounded-full"></div>
-                            <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-black rounded-full"></div>
-                            <div className="absolute -bottom-1 -right-1 w-1.5 h-1.5 bg-black rounded-full"></div>
+                    {(
+                        activeMainCategory === "technical"
+                            ? mainCategories.technical.subcategories[activeSubCategory as keyof typeof mainCategories.technical.subcategories].skills
+                            : mainCategories.softskills.skills
+                    ).map((skill: any, index: number) => {
+                        // Light gradient colors for skill cards (applied to ALL skills)
+                        const gradients = [
+                            'bg-gradient-to-br from-blue-50 via-white to-indigo-50',
+                            'bg-gradient-to-br from-green-50 via-white to-emerald-50',
+                            'bg-gradient-to-br from-purple-50 via-white to-violet-50',
+                            'bg-gradient-to-br from-orange-50 via-white to-amber-50',
+                            'bg-gradient-to-br from-pink-50 via-white to-rose-50',
+                            'bg-gradient-to-br from-teal-50 via-white to-cyan-50',
+                            'bg-gradient-to-br from-gray-50 via-white to-slate-50'
+                        ];
+                        const gradientClass = gradients[index % gradients.length];
 
-                            {/* Inner border */}
-                            <div className="border border-black p-2 bg-gradient-to-br from-white to-gray-50 h-full">
-                                <div className="text-center space-y-2">
-                                    {/* Icon */}
-                                    <div className="flex justify-center">
-                                        <div className="w-10 h-10 border border-black bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                            {renderSkillIcon(skill)}
+                        return (
+                            <div
+                                key={skill.name}
+                                className={`group relative border-2 border-black p-3 shadow-[4px_4px_0px_0px_#000] hover:shadow-[6px_6px_0px_0px_#000] transition-all duration-300 hover:scale-105 ${gradientClass}`}
+                            >
+                                {/* Floating corner accents */}
+                                <div className="absolute -top-1 -left-1 w-1.5 h-1.5 bg-black rounded-full"></div>
+                                <div className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-black rounded-full"></div>
+                                <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-black rounded-full"></div>
+                                <div className="absolute -bottom-1 -right-1 w-1.5 h-1.5 bg-black rounded-full"></div>
+
+                                {/* Inner border */}
+                                <div className="border border-black p-2 bg-white/50 h-full">
+                                    <div className="text-center space-y-2">
+                                        {/* Icon */}
+                                        <div className="flex justify-center">
+                                            <div className="w-10 h-10 border border-black bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                                {renderSkillIcon(skill)}
+                                            </div>
                                         </div>
+
+                                        {/* Skill Name */}
+                                        <h4 className="text-sm font-medium text-black group-hover:scale-105 transition-transform duration-300">
+                                            {skill.name}
+                                        </h4>
                                     </div>
-
-                                    {/* Skill Name */}
-                                    <h4 className="text-sm font-medium text-black group-hover:scale-105 transition-transform duration-300">
-                                        {skill.name}
-                                    </h4>
                                 </div>
-                            </div>
 
-                            {/* Subtle floating layers */}
-                            <div className="absolute inset-1 border border-black opacity-20 pointer-events-none"></div>
-                            <div className="absolute inset-2 border border-black opacity-10 pointer-events-none"></div>
-                        </div>
-                    ))}
+                                {/* Subtle floating layers */}
+                                <div className="absolute inset-1 border border-black opacity-20 pointer-events-none"></div>
+                                <div className="absolute inset-2 border border-black opacity-10 pointer-events-none"></div>
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
         </section>

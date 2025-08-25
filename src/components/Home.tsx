@@ -103,7 +103,7 @@ export function Home() {
                                     {/* Name - Responsive typography */}
                                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[5.3rem] font-bold text-black tracking-tight sm:leading-tight lg:leading-[5.3rem]">
                                         <AuroraText className="">
-                                            Gian Raphael D.
+                                            Gian Raphael
                                         </AuroraText>
                                         <span className="block mt-1 sm:mt-2"><PointerHighlight>Alcantara</PointerHighlight></span>
                                     </h1>

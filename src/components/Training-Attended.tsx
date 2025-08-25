@@ -17,8 +17,6 @@ export function TrainingAttended() {
             title: "Mastering in Power Apps (v27Nov2024)",
             provider: "Microsoft",
             issueDate: "Feb 17, 2025",
-            expiryDate: "—",
-            status: "Valid",
             statusColor: "green",
             logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
             certificateLink: "#",
@@ -27,11 +25,9 @@ export function TrainingAttended() {
         },
         {
             id: 2,
-            title: "Power BI – Turning Data into Actionable Insights (v1Dec2024)",
+            title: "Power BI - Turning Data into Actionable Insights (v1Dec2024)",
             provider: "Microsoft",
             issueDate: "Dec 13, 2024",
-            expiryDate: "—",
-            status: "Valid",
             statusColor: "green",
             logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
             certificateLink: "#",
@@ -43,13 +39,35 @@ export function TrainingAttended() {
             title: "Mastering in Power Automate (v24Nov2024)",
             provider: "Microsoft",
             issueDate: "Nov 26, 2024",
-            expiryDate: "—",
-            status: "Valid",
             statusColor: "green",
             logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
             certificateLink: "#",
             skills: ["Power Automate", "Workflow Automation", "Business Process", "Integration"],
             description: "Advanced instructor-led training on automating business processes using Microsoft Power Automate."
+        },
+        {
+            id: 4,
+            title: "Navigating the AI-Driven Future: Education, Ethics and Innovation",
+            provider: "Regional Assembly for Information Technology Education (RAITE)",
+            issueDate: "Nov 04, 2024",
+            status: "Completed",
+            statusColor: "blue",
+            logo: "/resources/raite-logo.svg",
+            certificateLink: "#",
+            skills: ["Information Technology", "Educational Technology", "Digital Literacy"],
+            description: "Regional assembly focusing on the latest developments in information technology education and digital transformation in academic institutions."
+        },
+        {
+            id: 5,
+            title: "GDG Cloud Next Extended Manila 2025",
+            provider: "Google Developer Group",
+            issueDate: "Jan 20, 2025",
+            status: "Valid",
+            statusColor: "green",
+            logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+            certificateLink: "#",
+            skills: ["Google Cloud Platform", "Machine Learning", "Web Development", "Cloud Computing"],
+            description: "Extended event covering Google Cloud innovations, AI/ML technologies, and modern web development practices presented at Cloud Next 2025."
         }
     ]
 
@@ -93,7 +111,7 @@ export function TrainingAttended() {
                 </div>
 
                 {/* Training Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto justify-items-center">
                     {trainings.map((training, index) => (
                         <div
                             key={training.id}
@@ -135,15 +153,6 @@ export function TrainingAttended() {
                                             </p>
                                         </div>
                                     </div>
-
-                                    {/* Status Badge */}
-                                    <div className={`border-2 px-2 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] text-xs font-bold ${getStatusBadgeColor(training.statusColor)
-                                        }`}>
-                                        <div className="flex items-center gap-1">
-                                            <FileCheck className="w-3 h-3" />
-                                            {training.status}
-                                        </div>
-                                    </div>
                                 </div>
 
                                 {/* Description */}
@@ -158,25 +167,31 @@ export function TrainingAttended() {
                                         <span className="text-xs text-black font-medium">Issue Date:</span>
                                         <span className="text-xs text-black">{training.issueDate}</span>
                                     </div>
-                                    <div className="flex items-center gap-2">
-                                        <Calendar className="w-4 h-4 text-black" />
-                                        <span className="text-xs text-black font-medium">Expiry:</span>
-                                        <span className="text-xs text-black">{training.expiryDate}</span>
-                                    </div>
                                 </div>
 
                                 {/* Skills */}
                                 <div className="mb-4">
                                     <h4 className="text-sm font-bold text-black mb-2">Skills Acquired</h4>
                                     <div className="flex flex-wrap gap-2">
-                                        {training.skills.map((skill, idx) => (
-                                            <div key={idx} className="relative">
-                                                <div className="border border-black bg-white px-2 py-1 shadow-[2px_2px_0px_0px_#000] text-xs font-medium text-black">
-                                                    {skill}
+                                        {training.skills.map((skill, idx) => {
+                                            const gradients = [
+                                                'bg-gradient-to-r from-blue-50 to-indigo-100 border-blue-200 hover:from-blue-100 hover:to-indigo-200',
+                                                'bg-gradient-to-r from-green-50 to-emerald-100 border-green-200 hover:from-green-100 hover:to-emerald-200',
+                                                'bg-gradient-to-r from-purple-50 to-violet-100 border-purple-200 hover:from-purple-100 hover:to-violet-200',
+                                                'bg-gradient-to-r from-orange-50 to-amber-100 border-orange-200 hover:from-orange-100 hover:to-amber-200',
+                                                'bg-gradient-to-r from-pink-50 to-rose-100 border-pink-200 hover:from-pink-100 hover:to-rose-200',
+                                                'bg-gradient-to-r from-teal-50 to-cyan-100 border-teal-200 hover:from-teal-100 hover:to-cyan-200'
+                                            ];
+                                            const gradientClass = gradients[idx % gradients.length];
+                                            
+                                            return (
+                                                <div key={idx} className="relative">
+                                                    <div className={`border px-2 py-1 rounded-md text-xs font-medium text-black transition-all duration-150 ${gradientClass}`}>
+                                                        {skill}
+                                                    </div>
                                                 </div>
-                                                <div className="absolute -top-0.5 -right-0.5 w-1 h-1 bg-black rounded-full"></div>
-                                            </div>
-                                        ))}
+                                            )
+                                        })}
                                     </div>
                                 </div>
 

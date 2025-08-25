@@ -22,11 +22,11 @@ export function Experience() {
             isCurrent: true,
             address: "Singapore",
             responsibilities: [
-                "Webhosting and web server management",
-                "Hands-on experience in LMS platform technical administration",
-                "Any other tasks related to the business unit"
+                "Webhosting and web server management.",
+                "Hands-on experience in LMS platform technical administration.",
+                "Any other tasks related to the business unit."
             ],
-            technologies: ["Laravel", "PHP", "MySQL", "API Integration", "Microsoft Power Apps", "Postman"]
+            technologies: ["Laravel", "Azure", "PHP", "MySQL", "API Integration", "Microsoft Power Platform", "Postman"]
         }
     ]
 
@@ -139,14 +139,26 @@ export function Experience() {
                                         <div>
                                             <h4 className="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-3">Technologies</h4>
                                             <div className="flex flex-wrap gap-1.5">
-                                                {exp.technologies.map((tech, idx) => (
-                                                    <div 
-                                                        key={idx} 
-                                                        className="px-2 py-0.5 bg-gray-50 border border-gray-200 rounded-md hover:bg-gray-100 transition-colors duration-150"
-                                                    >
-                                                        <span className="text-xs font-medium text-gray-700">{tech}</span>
-                                                    </div>
-                                                ))}
+                                                {exp.technologies.map((tech, idx) => {
+                                                    const gradients = [
+                                                        'bg-gradient-to-r from-blue-50 to-indigo-100 border-blue-200 hover:from-blue-100 hover:to-indigo-200',
+                                                        'bg-gradient-to-r from-green-50 to-emerald-100 border-green-200 hover:from-green-100 hover:to-emerald-200',
+                                                        'bg-gradient-to-r from-purple-50 to-violet-100 border-purple-200 hover:from-purple-100 hover:to-violet-200',
+                                                        'bg-gradient-to-r from-orange-50 to-amber-100 border-orange-200 hover:from-orange-100 hover:to-amber-200',
+                                                        'bg-gradient-to-r from-pink-50 to-rose-100 border-pink-200 hover:from-pink-100 hover:to-rose-200',
+                                                        'bg-gradient-to-r from-teal-50 to-cyan-100 border-teal-200 hover:from-teal-100 hover:to-cyan-200'
+                                                    ];
+                                                    const gradientClass = gradients[idx % gradients.length];
+                                                    
+                                                    return (
+                                                        <div 
+                                                            key={idx} 
+                                                            className={`px-2 py-0.5 border rounded-md transition-all duration-150 ${gradientClass}`}
+                                                        >
+                                                            <span className="text-xs font-medium text-gray-700">{tech}</span>
+                                                        </div>
+                                                    )
+                                                })}
                                             </div>
                                         </div>
                                     </div>

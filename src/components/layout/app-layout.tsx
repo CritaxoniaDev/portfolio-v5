@@ -19,11 +19,11 @@ import { useState, useEffect } from "react"
 const navigationItems = [
   { name: "Home", url: "/", icon: Home },
   { name: "About Me", url: "#about", icon: User },
-  { name: "Experience", url: "#experience", icon: Briefcase },
-  { name: "Training", url: "#training", icon: GraduationCap },
-  { name: "Education", url: "#education", icon: Settings },
-  { name: "Skills", url: "#skills", icon: Code },
+  { name: "Work Experience", url: "#experience", icon: Briefcase },
   { name: "Projects", url: "#projects", icon: GitBranch },
+  { name: "Training", url: "#training", icon: GraduationCap },
+  { name: "Skills", url: "#skills", icon: Code },
+  { name: "Education", url: "#education", icon: Settings },
   { name: "Contact", url: "#contact", icon: Mail },
 ]
 
@@ -31,7 +31,7 @@ const getFileExtension = (name: string): string => {
   const extensions: { [key: string]: string } = {
     'Home': 'tsx',
     'About Me': 'md',
-    'Experience': 'json',
+    'Work Experience': 'json',
     'Training': 'yml',
     'Education': 'txt',
     'Skills': 'js',
@@ -170,7 +170,7 @@ export function AppLayout({ children }: AppLayoutProps) {
                       <SidebarMenuItem key={item.name}>
                         <SidebarMenuButton
                           onClick={() => handleNavigation(item.url, item.name)}
-                          className={`group relative w-full justify-start px-2 py-2.5 text-black transition-all duration-150 rounded-none border-2 transform text-xs ${isActive
+                          className={`group relative w-full justify-start px-3 py-[20px] text-black transition-all duration-150 rounded-none border-2 transform text-xs ${isActive
                             ? 'bg-black text-white border-black shadow-[4px_4px_0px_0px_#000] translate-x-[-2px] translate-y-[-2px]'
                             : 'border-transparent bg-white hover:bg-gray-100 hover:border-black hover:shadow-[2px_2px_0px_0px_#000] hover:translate-x-[-1px] hover:translate-y-[-1px]'
                             }`}
