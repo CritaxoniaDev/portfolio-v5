@@ -120,17 +120,25 @@ export function About() {
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
             <div className="bg-white border-3 border-black shadow-[8px_8px_0px_0px_#000] max-w-2xl w-full max-h-[80vh] overflow-y-auto">
               {/* Modal Header */}
-              <div className="border-b-2 border-black p-4 flex items-center justify-between">
-                <h3 className="text-xl font-bold text-black flex items-center gap-2">
-                  <FileText className="w-5 h-5" />
-                  Professional Summary
-                </h3>
+              <div className="mb-6 flex gap-4">
                 <button
-                  onClick={() => setIsModalOpen(false)}
-                  className="border-2 border-black bg-white p-1 shadow-[2px_2px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] transition-all duration-200"
+                  onClick={() => setIsModalOpen(true)}
+                  className="inline-flex items-center gap-2 border-2 border-blue-600 bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 px-4 py-2 font-semibold text-blue-800 shadow-[4px_4px_0px_0px_#2563eb] hover:shadow-[6px_6px_0px_0px_#2563eb] transition-all duration-200"
                 >
-                  <X className="w-4 h-4" />
+                  <FileText className="w-4 h-4" />
+                  Professional Summary
                 </button>
+                <a
+                  href="/resume.pdf" // <-- Update this path to your actual resume file
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 border-2 border-blue-600 bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 px-4 py-2 font-semibold text-blue-800 shadow-[4px_4px_0px_0px_#2563eb] hover:shadow-[6px_6px_0px_0px_#2563eb] transition-all duration-200"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                  </svg>
+                  Resume
+                </a>
               </div>
 
               {/* Modal Content */}

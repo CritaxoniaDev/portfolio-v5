@@ -54,7 +54,7 @@ export function TrainingAttended() {
             statusColor: "blue",
             logo: "/resources/raite-logo.svg",
             certificateLink: "#",
-            skills: ["Information Technology", "Educational Technology", "Digital Literacy"],
+            skills: ["AI Driven Platforms"],
             description: "Regional assembly focusing on the latest developments in information technology education and digital transformation in academic institutions."
         },
         {
@@ -66,7 +66,7 @@ export function TrainingAttended() {
             statusColor: "green",
             logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
             certificateLink: "#",
-            skills: ["Google Cloud Platform", "Machine Learning", "Web Development", "Cloud Computing"],
+            skills: ["AI Agent SDK", "Unified Cloud Security", "Firebase Studio Prototyping"],
             description: "Extended event covering Google Cloud innovations, AI/ML technologies, and modern web development practices presented at Cloud Next 2025."
         }
     ]

@@ -247,6 +247,15 @@ export function AppLayout({ children }: AppLayoutProps) {
                     )
                   })}
                 </SidebarMenu>
+                {/* Special Resume Button */}
+                <button
+                  onClick={() => window.open('/resume.pdf', '_blank')}
+                  className="mt-6 w-full flex items-center justify-center gap-2 px-4 py-3 border-2 border-blue-700 bg-gradient-to-r from-blue-100 to-blue-200 text-blue-900 font-bold rounded shadow-[2px_2px_0px_0px_#2563eb] hover:bg-blue-200 hover:shadow-[4px_4px_0px_0px_#2563eb] transition-all duration-200 text-sm"
+                  type="button"
+                >
+                  
+                  View Resume
+                </button>
               </SidebarGroupContent>
             </SidebarGroup>
 
